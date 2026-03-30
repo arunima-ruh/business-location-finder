@@ -1,0 +1,28 @@
+{
+  "name": "business-location-finder",
+  "version": "1.0.0",
+  "description": "On-demand business finder with GPS extraction from WhatsApp location messages",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "setup": "node db/setup.js",
+    "test:api": "node scripts/test-api.js",
+    "simulate:location": "node scripts/simulate-webhook.js location",
+    "simulate:text": "node scripts/simulate-webhook.js text",
+    "simulate:scenario": "node scripts/simulate-webhook.js scenario",
+    "clean": "node scripts/clean-old-data.js",
+    "clean:dry": "node scripts/clean-old-data.js --dry-run"
+  },
+  "keywords": ["whatsapp", "location", "business-finder", "google-places"],
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
